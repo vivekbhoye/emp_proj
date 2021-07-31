@@ -13,21 +13,20 @@ import com.mph.controller.EmployeeInterface;
 import com.mph.exception.UserNotFoundException;
 import com.mph.model.Employee;
 
-public class MainClass {
-	
-	static boolean Validation(String username, String password) 
-	{
+public class MainClass{
+
+	static boolean Validation(String username, String password) {
 		String validUsername = "BASH";
 		String validPassword = "BASH";
-		BiPredicate<String,String>v1 =(x,y)->x.equals(y);
-		BiPredicate<String,String>v2 =(x,y)->x.equals(y);
-		Boolean valid = v1.test(username, validUsername )&& (v2.test(password , validPassword));
+		BiPredicate<String, String> v1 = (x, y) -> x.equals(y);
+		BiPredicate<String, String> v2 = (x, y) -> x.equals(y);
+		Boolean valid = v1.test(username, validUsername) && (v2.test(password, validPassword));
 //		Predicate<Employee> p1 = v->username.equals(validUsername)&&password.equals(validPassword);
 		return valid;
-		
+
 	}
 
-	public static void main(String[] args) throws IOException,InterruptedException {
+	public static void main(String[] args) throws IOException, InterruptedException {
 		System.out.println("Welcome To Employee Management System !!!");
 		EmployeeInterface ec = new EmployeeController();
 
@@ -36,8 +35,8 @@ public class MainClass {
 		List elist = null;
 
 //		-----------
-		try {		
-			
+		try {
+
 			String username;
 			String password;
 
@@ -51,8 +50,8 @@ public class MainClass {
 			System.out.println("Enter password :");
 			password = (br.readLine());
 
-			if (Validation(username,password)) {
-				
+			if (Validation(username, password)) {
+
 				System.out.println("Please wait while we Validate ");
 				Thread.sleep(1000);
 				System.out.println("Welcome " + username + ", You succesfully logged in");
@@ -107,34 +106,34 @@ public class MainClass {
 						ec.ViewByDepartment(elist);
 						break;
 					}
-					case 7 :{
+					case 7: {
 						ec.InsertUsingProcedure();
 						break;
 					}
-					
-				case 8 :{
-					ec.rsmd();
-					break;
-				}
-				case 9 :{
-					ec.type_forward_only_rs();
-					break;
-				}
-				case 10 :{
-					ec.type_scroll_insensitive_rs();
-					break;
-				}
-				case 11 :{
-					ec.type_scroll_sensitive_rs();
-					break;
-				}
-				case 12 :{
-					ec.type_scroll_sensitive_update_rs();
-					break;
-				}
+
+					case 8: {
+						ec.rsmd();
+						break;
+					}
+					case 9: {
+						ec.type_forward_only_rs();
+						break;
+					}
+					case 10: {
+						ec.type_scroll_insensitive_rs();
+						break;
+					}
+					case 11: {
+						ec.type_scroll_sensitive_rs();
+						break;
+					}
+					case 12: {
+						ec.type_scroll_sensitive_update_rs();
+						break;
+					}
 					default:
 						System.out.println("Plz enter a valid choice !!");
-						
+
 					}
 					System.out.println("Do you want to continue? Type Y or y to continue ");
 					input = sc.next();
@@ -151,7 +150,5 @@ public class MainClass {
 
 		}
 
-
 	}
 }
-
