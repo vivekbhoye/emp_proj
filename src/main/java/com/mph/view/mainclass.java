@@ -1,5 +1,4 @@
 package com.mph.view;
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -16,8 +15,8 @@ import com.mph.model.Employee;
 public class MainClass{
 
 	static boolean Validation(String username, String password) {
-		String validUsername = "BASH";
-		String validPassword = "BASH";
+		String validUsername = "vBASH";
+		String validPassword = "vBASH";
 		BiPredicate<String, String> v1 = (x, y) -> x.equals(y);
 		BiPredicate<String, String> v2 = (x, y) -> x.equals(y);
 		Boolean valid = v1.test(username, validUsername) && (v2.test(password, validPassword));
